@@ -1,0 +1,28 @@
+{
+   "description": "Injects coordinates into markers and adds right click functionality to show coordinates.",
+   "icons": {
+      "150": "icon.png"
+   },
+   "manifest_version": 3,
+   "minimum_chrome_version": "103.0",
+   "name": "Entsog Coordinates Hook",
+   "permissions": ["storage"],
+   "content_scripts": [
+      {
+         "matches": ["*://*.entsog.eu/*"],
+         "js": ["injected.js"],
+         "run_at": "document_start",
+         "world": "MAIN"
+       }
+   ],
+   "web_accessible_resources": [{
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+   }],
+   "content_security_policy": {
+      "extension_pages": "default-src 'self' 'wasm-unsafe-eval';"
+   },
+   "short_name": "EntsogCoords",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}
