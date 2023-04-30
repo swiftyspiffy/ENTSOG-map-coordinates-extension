@@ -6,7 +6,7 @@
    "manifest_version": 3,
    "minimum_chrome_version": "103.0",
    "name": "Entsog Coordinates Hook",
-   "permissions": ["storage"],
+   "permissions": [],
    "content_scripts": [
       {
          "matches": ["*://*.entsog.eu/*"],
