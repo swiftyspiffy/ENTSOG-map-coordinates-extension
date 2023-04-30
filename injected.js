@@ -40,13 +40,17 @@ function applyMarketCoordinates() {
     });
 }
 
+//coordinates are fucked because they're relative to the map as presented, and NOT the world map. Example:
 //finland/russia southern point: 
 // - leaflet: 59.44507509904714, 61.74316406249999
 // - gmaps: 60.513647450623296, 27.77397530558015
+// In calculateLatitude and calculateLongitude, a *relatiev* coordinate is passed in and some magic needs to be done
+// to convert it to world coordinates. How to do that? No fucking clue :/
+
 function calculateLatitude(lt) {
     return lt;
 }
 
 function calculateLongitude(lg) {
-    return lg - 34;
+    return lg;
 }
